@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloading a image from Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img id="downloadImg" src="images/copynew1.jpg" alt="webImage">
+    <button onclick="downloadImg()">Download Image</button>
+
+    <script>
+        function downloadImg(){
+            
+            var img = document.getElementById('downloadImg');
+
+            var a = document.createElement('a');
+            a.href = img.src;
+            a.download = 'images/copynew1.jpg';
+
+            document.body.appendChild(a);
+
+            a.click();
+
+            document.body.removeChild(a);
+        }
+    </script>
+    
+</body>
+</html>
